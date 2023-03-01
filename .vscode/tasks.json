@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run File",
+      "command": "python ${file}",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "focus": true
+      }
+    },
+    {
+      "label": "Run File With Log and Action Param",
+      "command": "python ${file} --log_clock ${input:log_clock} --act_range ${input:act_range}",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "focus": true
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "log_clock",
+      "type": "promptString",
+      "description": "Max Value for Log Clock"
+    },
+    {
+      "id": "act_range",
+      "type": "promptString",
+      "description": "Max Value for Action Range"
+    }
+  ]
+}
