@@ -21,7 +21,8 @@ def get_sys_args():
     return log_clock_val, act_value
 
 # Stores all the sockets between threads
-# [0-1, 0-2, 1-2] = socket from thread 0 to 1, socket from thread 0 to 2, socket from thread 1 to 2
+# Format [0-1, 1-0, 0-2, 1-2] = write socket from thread 0 to 1, write socket from thread 1 to 0, socket from thread 0 to 2, socket from thread 1 to 2
+# [0-1, 1-0, 0-2, 2-0, 1-2, 2-1]
 sockets_connections = []
 
 # Stores all the logical clocks for each thread
