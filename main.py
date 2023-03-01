@@ -25,6 +25,13 @@ def get_sys_args():
 # [0-1, 1-0, 0-2, 2-0, 1-2, 2-1]
 sockets_connections = []
 
+# Stores locks for enforcing atomic adds to message counters
+message_counter_locks = [multiprocessing.Lock(), multiprocessing.Lock(), multiprocessing.Lock()]
+
+# Stores the message counters for each thread
+# [10, 21, 31] = message counter for thread 0 = 10, message counter for thread 1 = 21, message counter for thread 2 = 31
+message_counters = [0, 0, 0]
+
 # Stores all the logical clocks for each thread
 # [10, 21, 31] = logical clock for thread 0 = 10, logical clock for thread 1 = 21, logical clock for thread 2 = 31
 logical_clocks = []
