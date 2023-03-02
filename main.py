@@ -6,7 +6,7 @@ from random import randrange
 import datetime
 import time
 
-base_log_name = "thread"
+base_log_name = "process"
 
 # Stores all the threads that are running. (Used for graceful shutdown)
 running_threads = []
@@ -98,7 +98,7 @@ def listen_for_connections(sock: socket.socket, network_queue):
     1. sock: The socket to listen for connections.
     @Returns: None.
     """
-    print("Server is listening and accepting connections...")
+    # print("Server is listening and accepting connections...")
     num_connected = 0
     while num_connected < 2:
         client_socket, client_address = sock.accept()
@@ -134,7 +134,8 @@ def do_thread_actions(thread_id, network_queue, clock_val, act_value, logical_cl
     - connected_sockets: The list of connected sockets.
     @Returns: None.
     """
-    
+    print("Starting Process", thread_id, "with", clock_val, "ticks per second")
+
     while run_event.is_set():
         if(len(network_queue) > 0):
             # Get the message from the network queue
