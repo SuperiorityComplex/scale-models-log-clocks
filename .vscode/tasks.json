@@ -3,7 +3,7 @@
   "tasks": [
     {
       "label": "Run File",
-      "command": "python3 ${file}",
+      "command": "python3 main.py",
       "type": "shell",
       "group": {
         "kind": "build",
@@ -17,7 +17,7 @@
     },
     {
       "label": "Run File With Log and Action Param",
-      "command": "python3 ${file} --log_clock ${input:log_clock} --act_range ${input:act_range} --duration ${input:duration}",
+      "command": "python3 main.py --log_clock ${input:log_clock} --act_range ${input:act_range} --duration ${input:duration}",
       "type": "shell",
       "group": {
         "kind": "build",
@@ -34,17 +34,20 @@
     {
       "id": "log_clock",
       "type": "promptString",
-      "description": "Max Value for Log Clock"
+      "description": "Max Value for Log Clock",
+      "default": "7"
     },
     {
       "id": "act_range",
       "type": "promptString",
-      "description": "Max Value for Action Range"
+      "description": "Max Value for Action Range",
+      "default": "11"
     },
     {
       "id": "duration",
       "type": "promptString",
-      "description": "Duration to run for"
+      "description": "Duration to run for",
+      "default": "60"
     }
   ]
 }

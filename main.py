@@ -3,6 +3,10 @@ import socket
 import sys
 import optparse
 from random import randrange
+import datetime
+import time
+
+base_log_name = "thread"
 
 # Stores all the threads that are running. (Used for graceful shutdown)
 running_threads = []
@@ -22,9 +26,9 @@ def get_sys_args():
     - act_value: Maximum value for the action range.
     """
     p = optparse.OptionParser()
-    p.add_option('--log_clock', '-l', default="6")
-    p.add_option('--act_range', '-a', default="6")
-    p.add_option('--duration', '-d', default="5")
+    p.add_option('--log_clock', '-l', default="7")
+    p.add_option('--act_range', '-a', default="11")
+    p.add_option('--duration', '-d', default="10")
     options, _ = p.parse_args()
     log_clock_val = int(options.log_clock)
     act_value = int(options.act_range)
@@ -32,18 +36,7 @@ def get_sys_args():
 
     return log_clock_val, act_value, duration
 
-# def write_message_to_socket(message, source_thread, dest_thread):
-#     """
-#     Writes a message to the socket between the two threads.
-#     @Parameter:
-#     - message: The message to be sent.
-#     - from_thread: The thread that is sending the message.
-#     - to_thread: The thread that is receiving the message.
-#     @Returns: None.
-#     """
-#     return
-
-def init_log_file(thread_id, base_file_name="thread"):
+def init_log_file(thread_id, base_file_name=base_log_name):
     """
     Initializes the log files for each thread.
     @Parameter: 
@@ -51,24 +44,35 @@ def init_log_file(thread_id, base_file_name="thread"):
     - base_file_name: The base file name for the log files.
     @Returns: None.
     """
-    with open("logs/{}".format("{}_{}".format(base_file_name, str(thread_id))), "a+"):
+    with open("logs/{}".format("{}_{}".format(base_file_name, str(thread_id))), "w+"):
         return
 
-# def write_log_to_file():
-#     """
-#     Writes the log to a file.
-#     @Parameter: None.
-#     @Returns: None.
-#     """
-#     return
+def write_to_log(thread_id, message, base_file_name=base_log_name):
+    """
+    Writes to the log file.
+    @Parameter: 
+    - thread_id: The id of the thread (0, 1, 2).
+    - queue_len: The length of the message queue.
+    - clock_time: The logical clock time.
+    - base_file_name: The base file name for the log files.
+    @Returns: None.
+    """
+    # write in the log that it received a message, the global time (gotten from the system), the length of the message queue, and the logical clock time.
+    with open("logs/{}".format("{}_{}".format(base_file_name, str(thread_id))), "a") as f:
+        f.write(message + "\n")
+    return
 
-# def send_message():
-#     """
-#     Determines which threads to send to and sends the message.
-#     @Parameter: None.
-#     @Returns: None.
-#     """
-#     return
+def send_message(sockets, logical_clock_value):
+    """
+    Sends message with logical clock value to sockets.
+    @Parameter: 
+    - sockets: The sockets to send the message to.
+    - logical_clock_value: The local logical clock value to send.
+    @Returns: None.
+    """
+    for sock in sockets:
+        final_payload = str(logical_clock_value[0])
+        sock.sendall(final_payload.encode('utf-8'))
 
 
 def read_message_from_socket(sock, network_queue):
@@ -82,11 +86,12 @@ def read_message_from_socket(sock, network_queue):
     while run_event.is_set(): 
         # Message is just the local logical clock time
         message = sock.recv(1024).decode('utf-8')
-        network_queue.append(message)
+        if(message):
+            network_queue.append(int(message))
     return
     
 
-def listen_for_connections(sock: socket.socket):
+def listen_for_connections(sock: socket.socket, network_queue):
     """
     Listens for connections from clients.
     @Parameter:
@@ -97,23 +102,67 @@ def listen_for_connections(sock: socket.socket):
     num_connected = 0
     while num_connected < 2:
         client_socket, client_address = sock.accept()
-        print(f'New connection from {client_address}')
+        start_reading_from_socket(client_socket, network_queue)
         running_sockets.append(client_socket)
         num_connected += 1
 
-
-def do_thread_actions():
+def start_reading_from_socket(sock, network_queue):
     """
-    Performs the actions of the thread.
-    @Parameter: None.
+    Starts a thread to read from a socket.
+    @Parameter:
+    - sock: The socket to read from.
+    - network_queue: The network queue to save the message to.
     @Returns: None.
     """
-        # Get the arguments from the flags
-#     log_clock_val, act_value, _ = get_sys_args()
-# clock_val = randrange(log_clock_val)
+    # Create constantly running thread to read message from socket into network_queue
+    read_msg_thread = threading.Thread(
+                target=read_message_from_socket, args=(sock, network_queue,))
+    read_msg_thread.start()
+    running_threads.append(read_msg_thread)
+
+
+
+def do_thread_actions(thread_id, network_queue, clock_val, act_value, logical_clock_value, connected_sockets):
+    """
+    Performs the actions of the thread.
+    @Parameter: 
+    - thread_id: The id of the thread (0, 1, 2).
+    - network_queue: The network queue to read from.
+    - clock_val: The clock ticks per second.
+    - act_value: The maximum value for the action range.
+    - logical_clock_value: The logical clock value as an array for mutability (i.e. [logical_clock_value]).
+    - connected_sockets: The list of connected sockets.
+    @Returns: None.
+    """
+    
     while run_event.is_set():
-        print( "HI")
-    return
+        if(len(network_queue) > 0):
+            # Get the message from the network queue
+            log_clock_value = network_queue.pop(0)
+            # Update the logical clock value
+            logical_clock_value[0] = max(logical_clock_value[0], log_clock_value) + 1
+            # Write to the log file
+            message = "Received message at time: {} with msg queue: {} with logical clock: {}.".format(datetime.datetime.now().isoformat(),  len(network_queue), logical_clock_value[0])
+        else:
+            action = randrange(1, act_value)
+            # Increment the clock value
+            logical_clock_value[0] += 1
+            if action == 1:
+                send_message([connected_sockets[0]], logical_clock_value)
+                message = "Sent message to socket at time: {} with logical clock: {}.".format(datetime.datetime.now().isoformat(), logical_clock_value[0])
+            elif action == 2:
+                send_message([connected_sockets[1]], logical_clock_value)
+                message = "Sent message to other socket at time: {} with logical clock: {}.".format(datetime.datetime.now().isoformat(), logical_clock_value[0])
+            elif action == 3:
+                send_message(connected_sockets, logical_clock_value)
+                message = "Sent message to both sockets at time: {} with logical clock: {}.".format(datetime.datetime.now().isoformat(), logical_clock_value[0])
+            else:
+                message = "Internal event at time: {} with logical clock: {}.".format(datetime.datetime.now().isoformat(), logical_clock_value[0])
+
+        # Write to the log file
+        write_to_log(thread_id, message)
+        # Sleep for the clock value
+        time.sleep(1.0 / clock_val)
 
 def thread_process(thread_id):
     """
@@ -137,7 +186,7 @@ def thread_process(thread_id):
     
     # Create a running thread to listen for two connections
     accept_thread = threading.Thread(
-                target=listen_for_connections, args=(sock,))
+                target=listen_for_connections, args=(sock, network_queue))
     accept_thread.start()
     running_threads.append(accept_thread)
 
@@ -151,12 +200,12 @@ def thread_process(thread_id):
         connected_sockets.append(c_socket)
         running_sockets.append(sock)
 
-    # Create constantly running thread to read message from socket into network_queue
-    read_msg_thread = threading.Thread(
-                target=read_message_from_socket, args=(sock, network_queue,))
-    read_msg_thread.start()
-    running_threads.append(read_msg_thread)
-    do_thread_actions()
+
+    # Get the arguments from the flags
+    log_clock_val, act_value, _ = get_sys_args()
+    clock_val = randrange(log_clock_val)
+    logical_clock_value = [0]
+    do_thread_actions(thread_id, network_queue, clock_val, act_value, logical_clock_value, connected_sockets)
 
 def gracefully_shutdown():
     """
@@ -165,7 +214,6 @@ def gracefully_shutdown():
     @Returns: None.
     """
     run_event.clear()
-    print("SHITDOWN")
     try:
         for sock in running_sockets:
             sock.shutdown(socket.SHUT_RDWR)
