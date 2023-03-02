@@ -3,7 +3,7 @@
   "tasks": [
     {
       "label": "Run File",
-      "command": "python ${file}",
+      "command": "python3 ${file}",
       "type": "shell",
       "group": {
         "kind": "build",
@@ -17,7 +17,7 @@
     },
     {
       "label": "Run File With Log and Action Param",
-      "command": "python ${file} --log_clock ${input:log_clock} --act_range ${input:act_range}",
+      "command": "python3 ${file} --log_clock ${input:log_clock} --act_range ${input:act_range}",
       "type": "shell",
       "group": {
         "kind": "build",
