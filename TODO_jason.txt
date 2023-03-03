@@ -1,9 +1,6 @@
 TODO: jason 
 
---> write unit tests
+--> write unit tests, write in notebook
 
 --> execute experiments
 --> manually parse scripts and extract interesting info, write in notebook
-
-
---> put together notebook

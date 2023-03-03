@@ -1,0 +1,50 @@
+########################
+Code design:
+
+TODO - Ivan
+
+########################
+
+Unit testing:
+
+TODO - Jason
+
+########################
+
+Experiments:
+
+We run the following 5 experiments on this three-machine model, with 5 runs each:
+
+# Experiment 0: Run with default settings
+# Experiment 1: All clock rates are exactly the same
+# Experiment 2: 0, 1 are slow clock rate, 2 is very very fast
+# Experiment 3: 0 is slow, 1 and 2 are fast
+# Experiment 4: Default clock rates, but super likely to send messages (act_range down to 4)
+
+These experiments cover a wide range of cases where the machines run at different rates and also
+are more or less likely to send messages to each other.
+
+Execute the experiments using 
+$ ./experiments.sh
+
+########################
+
+Findings:
+
+# Experiment 0: Run with default settings
+asdf
+
+# Experiment 1: All clock rates are exactly the same
+asdf
+
+# Experiment 2: 0, 1 are slow clock rate, 2 is very very fast
+asdf
+
+# Experiment 3: 0 is slow, 1 and 2 are fast
+asdf
+
+# Experiment 4: Default clock rates, but super likely to send messages (act_range down to 4)
+asdf
+
+Overall:
+asdf
