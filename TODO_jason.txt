@@ -1,8 +1,9 @@
 TODO: jason 
 
---> write unit tests for init_log_file, write_to_log
---> add some way to manually set the clockrate of all three processes, also action prob
---> do different experiments with varying values of the params
---> write scripts to execute tests
---> write scripts to parse data (ex. how often is there a logical clock skip, how big are the skips, etc)
+--> write unit tests
+
+--> execute experiments
+--> manually parse scripts and extract interesting info, write in notebook
+
+
 --> put together notebook

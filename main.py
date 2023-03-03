@@ -6,8 +6,6 @@ from random import randrange
 import datetime
 import time
 
-base_log_name = "process"
-
 # Stores all the threads that are running. (Used for graceful shutdown)
 running_threads = []
 
@@ -24,19 +22,37 @@ def get_sys_args():
     @Returns: 
     - log_clock_val: Maximum value for the clock tick range
     - act_value: Maximum value for the action range.
+    - duration: how many seconds to run simulation
     """
     p = optparse.OptionParser()
-    p.add_option('--log_clock', '-l', default="7")
+    # normal execution flags
+    p.add_option('--clock_range', '-c', default="7")
     p.add_option('--act_range', '-a', default="11")
     p.add_option('--duration', '-d', default="10")
+    p.add_option('--log_name', '-l', default="process")
+    
+    # manual setting flags
+    p.add_option('--p0_clock', default="-1")
+    p.add_option('--p1_clock', default="-1")
+    p.add_option('--p2_clock', default="-1")
+
+    p.add_option('--p0_act', default="-1")
+    p.add_option('--p1_act', default="-1")
+    p.add_option('--p2_act', default="-1")
+
     options, _ = p.parse_args()
-    log_clock_val = int(options.log_clock)
+    
+    log_clock_val = int(options.clock_range)
     act_value = int(options.act_range)
     duration = int(options.duration)
+    base_log = options.log_name # edits global variable
 
-    return log_clock_val, act_value, duration
+    clocks = (int(options.p0_clock), int(options.p1_clock), int(options.p2_clock))
+    acts = (int(options.p0_act), int(options.p1_act), int(options.p2_act))
 
-def init_log_file(thread_id, base_file_name=base_log_name):
+    return base_log, log_clock_val, act_value, duration, clocks, acts
+
+def init_log_file(thread_id, base_file_name="process"):
     """
     Initializes the log files for each thread.
     @Parameter: 
@@ -47,14 +63,13 @@ def init_log_file(thread_id, base_file_name=base_log_name):
     with open("logs/{}".format("{}_{}".format(base_file_name, str(thread_id))), "w+"):
         return
 
-def write_to_log(thread_id, message, base_file_name=base_log_name):
+def write_to_log(thread_id, message, base_file_name="process"):
     """
     Writes to the log file.
     @Parameter: 
     - thread_id: The id of the thread (0, 1, 2).
-    - queue_len: The length of the message queue.
-    - clock_time: The logical clock time.
-    - base_file_name: The base file name for the log files.
+    - message: Message to write
+    - base_file_name: Base file name, will be appended with thread_id
     @Returns: None.
     """
     # write in the log that it received a message, the global time (gotten from the system), the length of the message queue, and the logical clock time.
@@ -122,7 +137,7 @@ def start_reading_from_socket(sock, network_queue):
 
 
 
-def do_thread_actions(thread_id, network_queue, clock_val, act_value, logical_clock_value, connected_sockets):
+def do_thread_actions(thread_id, network_queue, base_log_name, clock_val, act_value, logical_clock_value, connected_sockets):
     """
     Performs the actions of the thread.
     @Parameter: 
@@ -134,7 +149,7 @@ def do_thread_actions(thread_id, network_queue, clock_val, act_value, logical_cl
     - connected_sockets: The list of connected sockets.
     @Returns: None.
     """
-    print("Starting Process", thread_id, "with", clock_val, "ticks per second")
+    print("Starting Process", thread_id, "with", clock_val, "ticks per second", "and", act_value, "action range")
 
     while run_event.is_set():
         if(len(network_queue) > 0):
@@ -161,7 +176,7 @@ def do_thread_actions(thread_id, network_queue, clock_val, act_value, logical_cl
                 message = "Internal event at time: {} with logical clock: {}.".format(datetime.datetime.now().isoformat(), logical_clock_value[0])
 
         # Write to the log file
-        write_to_log(thread_id, message)
+        write_to_log(thread_id, message, base_log_name)
         # Sleep for the clock value
         time.sleep(1.0 / clock_val)
 
@@ -176,8 +191,11 @@ def thread_process(thread_id):
     # Initialize the network queue for the process
     network_queue = []
 
+    # Get the arguments from the flags
+    base_log_name, log_clock_val, act_value, _, clocks, acts = get_sys_args()
+
     # Initialize the log file for the process
-    init_log_file(thread_id)
+    init_log_file(thread_id, base_log_name)
     
     # Create socket to listen for messages for this process
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -201,12 +219,16 @@ def thread_process(thread_id):
         connected_sockets.append(c_socket)
         running_sockets.append(sock)
 
-
-    # Get the arguments from the flags
-    log_clock_val, act_value, _ = get_sys_args()
-    clock_val = randrange(log_clock_val)
+    clock_val = randrange(1, log_clock_val)
     logical_clock_value = [0]
-    do_thread_actions(thread_id, network_queue, clock_val, act_value, logical_clock_value, connected_sockets)
+
+    # manually setting clocks/acts
+    if clocks[thread_id] != -1:
+        clock_val = clocks[thread_id]
+    if acts[thread_id] != -1:
+        act_value = acts[thread_id]
+
+    do_thread_actions(thread_id, network_queue, base_log_name, clock_val, act_value, logical_clock_value, connected_sockets)
 
 def gracefully_shutdown():
     """
@@ -251,7 +273,7 @@ def start_threads():
         gracefully_shutdown()
 
 def main():
-    _, _, duration = get_sys_args()
+    base_log_name, _, _, duration, _, _ = get_sys_args()
     shutdown_thread = threading.Timer(duration, gracefully_shutdown)
     shutdown_thread.start()
     start_threads()
