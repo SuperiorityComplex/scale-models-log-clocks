@@ -3,6 +3,11 @@ Code design:
 
 TODO - Ivan
 
+- Ran into problem with the server side of the processes not being completed before the
+other processes started to attempt to connect, patched using 5 second sleep between when
+each the process start their server-side bind and listen and when the process attempts to
+connect to the other processes.
+
 ########################
 
 Unit testing:
