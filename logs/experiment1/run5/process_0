@@ -1,0 +1,265 @@
+Internal event at time: 2023-03-04T14:01:37.277024 with logical clock: 1.
+Sent message to socket at time: 2023-03-04T14:01:37.478496 with logical clock: 2.
+Internal event at time: 2023-03-04T14:01:37.686531 with logical clock: 3.
+Internal event at time: 2023-03-04T14:01:37.894910 with logical clock: 4.
+Received message at time: 2023-03-04T14:01:38.105689 with msg queue: 1 with logical clock: 6.
+Received message at time: 2023-03-04T14:01:38.311389 with msg queue: 0 with logical clock: 7.
+Sent message to both sockets at time: 2023-03-04T14:01:38.520415 with logical clock: 8.
+Internal event at time: 2023-03-04T14:01:38.727921 with logical clock: 9.
+Internal event at time: 2023-03-04T14:01:38.938266 with logical clock: 10.
+Internal event at time: 2023-03-04T14:01:39.144584 with logical clock: 11.
+Internal event at time: 2023-03-04T14:01:39.355359 with logical clock: 12.
+Internal event at time: 2023-03-04T14:01:39.564020 with logical clock: 13.
+Sent message to both sockets at time: 2023-03-04T14:01:39.770085 with logical clock: 14.
+Sent message to socket at time: 2023-03-04T14:01:39.981097 with logical clock: 15.
+Internal event at time: 2023-03-04T14:01:40.186297 with logical clock: 16.
+Internal event at time: 2023-03-04T14:01:40.395149 with logical clock: 17.
+Received message at time: 2023-03-04T14:01:40.602966 with msg queue: 0 with logical clock: 19.
+Internal event at time: 2023-03-04T14:01:40.811283 with logical clock: 20.
+Received message at time: 2023-03-04T14:01:41.019527 with msg queue: 0 with logical clock: 21.
+Internal event at time: 2023-03-04T14:01:41.227875 with logical clock: 22.
+Received message at time: 2023-03-04T14:01:41.436181 with msg queue: 1 with logical clock: 24.
+Received message at time: 2023-03-04T14:01:41.644770 with msg queue: 0 with logical clock: 25.
+Internal event at time: 2023-03-04T14:01:41.855287 with logical clock: 26.
+Internal event at time: 2023-03-04T14:01:42.061305 with logical clock: 27.
+Internal event at time: 2023-03-04T14:01:42.269673 with logical clock: 28.
+Internal event at time: 2023-03-04T14:01:42.480260 with logical clock: 29.
+Sent message to socket at time: 2023-03-04T14:01:42.686806 with logical clock: 30.
+Received message at time: 2023-03-04T14:01:42.894817 with msg queue: 0 with logical clock: 31.
+Internal event at time: 2023-03-04T14:01:43.102985 with logical clock: 32.
+Internal event at time: 2023-03-04T14:01:43.311292 with logical clock: 33.
+Received message at time: 2023-03-04T14:01:43.517924 with msg queue: 0 with logical clock: 34.
+Internal event at time: 2023-03-04T14:01:43.727965 with logical clock: 35.
+Sent message to socket at time: 2023-03-04T14:01:43.936376 with logical clock: 36.
+Internal event at time: 2023-03-04T14:01:44.144789 with logical clock: 37.
+Received message at time: 2023-03-04T14:01:44.352855 with msg queue: 0 with logical clock: 39.
+Internal event at time: 2023-03-04T14:01:44.561241 with logical clock: 40.
+Received message at time: 2023-03-04T14:01:44.769601 with msg queue: 0 with logical clock: 41.
+Sent message to both sockets at time: 2023-03-04T14:01:44.978516 with logical clock: 42.
+Received message at time: 2023-03-04T14:01:45.186560 with msg queue: 0 with logical clock: 43.
+Internal event at time: 2023-03-04T14:01:45.394623 with logical clock: 44.
+Internal event at time: 2023-03-04T14:01:45.605435 with logical clock: 45.
+Sent message to socket at time: 2023-03-04T14:01:45.810645 with logical clock: 46.
+Internal event at time: 2023-03-04T14:01:46.019525 with logical clock: 47.
+Received message at time: 2023-03-04T14:01:46.230365 with msg queue: 0 with logical clock: 48.
+Sent message to both sockets at time: 2023-03-04T14:01:46.437202 with logical clock: 49.
+Internal event at time: 2023-03-04T14:01:46.638680 with logical clock: 50.
+Sent message to other socket at time: 2023-03-04T14:01:46.844971 with logical clock: 51.
+Internal event at time: 2023-03-04T14:01:47.052799 with logical clock: 52.
+Internal event at time: 2023-03-04T14:01:47.261151 with logical clock: 53.
+Received message at time: 2023-03-04T14:01:47.471869 with msg queue: 1 with logical clock: 55.
+Received message at time: 2023-03-04T14:01:47.678246 with msg queue: 1 with logical clock: 56.
+Received message at time: 2023-03-04T14:01:47.886195 with msg queue: 0 with logical clock: 57.
+Internal event at time: 2023-03-04T14:01:48.094413 with logical clock: 58.
+Internal event at time: 2023-03-04T14:01:48.302453 with logical clock: 59.
+Internal event at time: 2023-03-04T14:01:48.511047 with logical clock: 60.
+Internal event at time: 2023-03-04T14:01:48.719375 with logical clock: 61.
+Internal event at time: 2023-03-04T14:01:48.929653 with logical clock: 62.
+Internal event at time: 2023-03-04T14:01:49.136077 with logical clock: 63.
+Received message at time: 2023-03-04T14:01:49.344393 with msg queue: 0 with logical clock: 65.
+Internal event at time: 2023-03-04T14:01:49.551934 with logical clock: 66.
+Internal event at time: 2023-03-04T14:01:49.753154 with logical clock: 67.
+Internal event at time: 2023-03-04T14:01:49.961155 with logical clock: 68.
+Received message at time: 2023-03-04T14:01:50.171671 with msg queue: 0 with logical clock: 69.
+Internal event at time: 2023-03-04T14:01:50.377767 with logical clock: 70.
+Sent message to socket at time: 2023-03-04T14:01:50.589274 with logical clock: 71.
+Internal event at time: 2023-03-04T14:01:50.794402 with logical clock: 72.
+Internal event at time: 2023-03-04T14:01:51.002319 with logical clock: 73.
+Received message at time: 2023-03-04T14:01:51.211029 with msg queue: 0 with logical clock: 74.
+Received message at time: 2023-03-04T14:01:51.419935 with msg queue: 0 with logical clock: 75.
+Received message at time: 2023-03-04T14:01:51.628479 with msg queue: 0 with logical clock: 76.
+Received message at time: 2023-03-04T14:01:51.839012 with msg queue: 1 with logical clock: 77.
+Received message at time: 2023-03-04T14:01:52.044392 with msg queue: 0 with logical clock: 78.
+Received message at time: 2023-03-04T14:01:52.252736 with msg queue: 0 with logical clock: 79.
+Internal event at time: 2023-03-04T14:01:52.456102 with logical clock: 80.
+Sent message to other socket at time: 2023-03-04T14:01:52.661367 with logical clock: 81.
+Sent message to socket at time: 2023-03-04T14:01:52.872568 with logical clock: 82.
+Internal event at time: 2023-03-04T14:01:53.077713 with logical clock: 83.
+Sent message to other socket at time: 2023-03-04T14:01:53.288915 with logical clock: 84.
+Internal event at time: 2023-03-04T14:01:53.494454 with logical clock: 85.
+Received message at time: 2023-03-04T14:01:53.702700 with msg queue: 0 with logical clock: 86.
+Received message at time: 2023-03-04T14:01:53.911114 with msg queue: 0 with logical clock: 88.
+Internal event at time: 2023-03-04T14:01:54.119365 with logical clock: 89.
+Internal event at time: 2023-03-04T14:01:54.327767 with logical clock: 90.
+Received message at time: 2023-03-04T14:01:54.538469 with msg queue: 0 with logical clock: 92.
+Received message at time: 2023-03-04T14:01:54.748850 with msg queue: 1 with logical clock: 93.
+Received message at time: 2023-03-04T14:01:54.955723 with msg queue: 0 with logical clock: 94.
+Received message at time: 2023-03-04T14:01:55.158938 with msg queue: 0 with logical clock: 95.
+Internal event at time: 2023-03-04T14:01:55.369359 with logical clock: 96.
+Received message at time: 2023-03-04T14:01:55.577782 with msg queue: 0 with logical clock: 97.
+Internal event at time: 2023-03-04T14:01:55.786139 with logical clock: 98.
+Internal event at time: 2023-03-04T14:01:55.994444 with logical clock: 99.
+Sent message to socket at time: 2023-03-04T14:01:56.196603 with logical clock: 100.
+Sent message to other socket at time: 2023-03-04T14:01:56.402996 with logical clock: 101.
+Internal event at time: 2023-03-04T14:01:56.609574 with logical clock: 102.
+Sent message to other socket at time: 2023-03-04T14:01:56.817757 with logical clock: 103.
+Internal event at time: 2023-03-04T14:01:57.027694 with logical clock: 104.
+Sent message to both sockets at time: 2023-03-04T14:01:57.238320 with logical clock: 105.
+Internal event at time: 2023-03-04T14:01:57.444645 with logical clock: 106.
+Internal event at time: 2023-03-04T14:01:57.652721 with logical clock: 107.
+Internal event at time: 2023-03-04T14:01:57.859907 with logical clock: 108.
+Sent message to other socket at time: 2023-03-04T14:01:58.061195 with logical clock: 109.
+Sent message to socket at time: 2023-03-04T14:01:58.269735 with logical clock: 110.
+Internal event at time: 2023-03-04T14:01:58.480167 with logical clock: 111.
+Received message at time: 2023-03-04T14:01:58.685989 with msg queue: 0 with logical clock: 114.
+Internal event at time: 2023-03-04T14:01:58.894366 with logical clock: 115.
+Internal event at time: 2023-03-04T14:01:59.102631 with logical clock: 116.
+Sent message to socket at time: 2023-03-04T14:01:59.311427 with logical clock: 117.
+Internal event at time: 2023-03-04T14:01:59.521755 with logical clock: 118.
+Internal event at time: 2023-03-04T14:01:59.727629 with logical clock: 119.
+Sent message to both sockets at time: 2023-03-04T14:01:59.936296 with logical clock: 120.
+Sent message to other socket at time: 2023-03-04T14:02:00.144607 with logical clock: 121.
+Sent message to both sockets at time: 2023-03-04T14:02:00.353291 with logical clock: 122.
+Internal event at time: 2023-03-04T14:02:00.561242 with logical clock: 123.
+Internal event at time: 2023-03-04T14:02:00.771237 with logical clock: 124.
+Received message at time: 2023-03-04T14:02:00.977563 with msg queue: 0 with logical clock: 126.
+Internal event at time: 2023-03-04T14:02:01.185915 with logical clock: 127.
+Received message at time: 2023-03-04T14:02:01.393880 with msg queue: 0 with logical clock: 129.
+Internal event at time: 2023-03-04T14:02:01.594568 with logical clock: 130.
+Internal event at time: 2023-03-04T14:02:01.802627 with logical clock: 131.
+Internal event at time: 2023-03-04T14:02:02.011188 with logical clock: 132.
+Internal event at time: 2023-03-04T14:02:02.219408 with logical clock: 133.
+Received message at time: 2023-03-04T14:02:02.429984 with msg queue: 0 with logical clock: 134.
+Internal event at time: 2023-03-04T14:02:02.636007 with logical clock: 135.
+Received message at time: 2023-03-04T14:02:02.844494 with msg queue: 0 with logical clock: 136.
+Sent message to socket at time: 2023-03-04T14:02:03.052877 with logical clock: 137.
+Sent message to other socket at time: 2023-03-04T14:02:03.261288 with logical clock: 138.
+Internal event at time: 2023-03-04T14:02:03.471608 with logical clock: 139.
+Internal event at time: 2023-03-04T14:02:03.677566 with logical clock: 140.
+Internal event at time: 2023-03-04T14:02:03.886053 with logical clock: 141.
+Internal event at time: 2023-03-04T14:02:04.094319 with logical clock: 142.
+Received message at time: 2023-03-04T14:02:04.302681 with msg queue: 0 with logical clock: 143.
+Sent message to socket at time: 2023-03-04T14:02:04.513413 with logical clock: 144.
+Received message at time: 2023-03-04T14:02:04.719229 with msg queue: 0 with logical clock: 146.
+Received message at time: 2023-03-04T14:02:04.927695 with msg queue: 0 with logical clock: 148.
+Internal event at time: 2023-03-04T14:02:05.135894 with logical clock: 149.
+Internal event at time: 2023-03-04T14:02:05.344268 with logical clock: 150.
+Internal event at time: 2023-03-04T14:02:05.552638 with logical clock: 151.
+Received message at time: 2023-03-04T14:02:05.762844 with msg queue: 0 with logical clock: 153.
+Received message at time: 2023-03-04T14:02:05.969327 with msg queue: 0 with logical clock: 154.
+Received message at time: 2023-03-04T14:02:06.177688 with msg queue: 0 with logical clock: 155.
+Internal event at time: 2023-03-04T14:02:06.386108 with logical clock: 156.
+Sent message to both sockets at time: 2023-03-04T14:02:06.594658 with logical clock: 157.
+Internal event at time: 2023-03-04T14:02:06.802276 with logical clock: 158.
+Internal event at time: 2023-03-04T14:02:07.011018 with logical clock: 159.
+Internal event at time: 2023-03-04T14:02:07.221757 with logical clock: 160.
+Sent message to both sockets at time: 2023-03-04T14:02:07.427987 with logical clock: 161.
+Internal event at time: 2023-03-04T14:02:07.636131 with logical clock: 162.
+Internal event at time: 2023-03-04T14:02:07.844438 with logical clock: 163.
+Sent message to both sockets at time: 2023-03-04T14:02:08.054652 with logical clock: 164.
+Sent message to socket at time: 2023-03-04T14:02:08.258910 with logical clock: 165.
+Received message at time: 2023-03-04T14:02:08.469426 with msg queue: 0 with logical clock: 167.
+Internal event at time: 2023-03-04T14:02:08.680380 with logical clock: 168.
+Internal event at time: 2023-03-04T14:02:08.885933 with logical clock: 169.
+Received message at time: 2023-03-04T14:02:09.094308 with msg queue: 0 with logical clock: 170.
+Received message at time: 2023-03-04T14:02:09.302612 with msg queue: 0 with logical clock: 171.
+Received message at time: 2023-03-04T14:02:09.513236 with msg queue: 0 with logical clock: 172.
+Received message at time: 2023-03-04T14:02:09.719267 with msg queue: 0 with logical clock: 174.
+Internal event at time: 2023-03-04T14:02:09.927505 with logical clock: 175.
+Sent message to other socket at time: 2023-03-04T14:02:10.138022 with logical clock: 176.
+Internal event at time: 2023-03-04T14:02:10.344268 with logical clock: 177.
+Received message at time: 2023-03-04T14:02:10.555005 with msg queue: 0 with logical clock: 179.
+Received message at time: 2023-03-04T14:02:10.760960 with msg queue: 0 with logical clock: 180.
+Internal event at time: 2023-03-04T14:02:10.969173 with logical clock: 181.
+Received message at time: 2023-03-04T14:02:11.177500 with msg queue: 0 with logical clock: 182.
+Received message at time: 2023-03-04T14:02:11.385862 with msg queue: 0 with logical clock: 183.
+Received message at time: 2023-03-04T14:02:11.596775 with msg queue: 0 with logical clock: 184.
+Internal event at time: 2023-03-04T14:02:11.802581 with logical clock: 185.
+Internal event at time: 2023-03-04T14:02:12.010809 with logical clock: 186.
+Received message at time: 2023-03-04T14:02:12.219184 with msg queue: 0 with logical clock: 188.
+Internal event at time: 2023-03-04T14:02:12.427646 with logical clock: 189.
+Sent message to other socket at time: 2023-03-04T14:02:12.636566 with logical clock: 190.
+Sent message to both sockets at time: 2023-03-04T14:02:12.844335 with logical clock: 191.
+Internal event at time: 2023-03-04T14:02:13.055149 with logical clock: 192.
+Internal event at time: 2023-03-04T14:02:13.260836 with logical clock: 193.
+Received message at time: 2023-03-04T14:02:13.469211 with msg queue: 0 with logical clock: 195.
+Internal event at time: 2023-03-04T14:02:13.677532 with logical clock: 196.
+Received message at time: 2023-03-04T14:02:13.885814 with msg queue: 0 with logical clock: 197.
+Sent message to socket at time: 2023-03-04T14:02:14.094456 with logical clock: 198.
+Internal event at time: 2023-03-04T14:02:14.302486 with logical clock: 199.
+Sent message to other socket at time: 2023-03-04T14:02:14.510976 with logical clock: 200.
+Received message at time: 2023-03-04T14:02:14.719087 with msg queue: 0 with logical clock: 202.
+Sent message to other socket at time: 2023-03-04T14:02:14.928049 with logical clock: 203.
+Internal event at time: 2023-03-04T14:02:15.135904 with logical clock: 204.
+Sent message to both sockets at time: 2023-03-04T14:02:15.344297 with logical clock: 205.
+Internal event at time: 2023-03-04T14:02:15.554842 with logical clock: 206.
+Sent message to other socket at time: 2023-03-04T14:02:15.761371 with logical clock: 207.
+Received message at time: 2023-03-04T14:02:15.971850 with msg queue: 0 with logical clock: 210.
+Sent message to both sockets at time: 2023-03-04T14:02:16.177986 with logical clock: 211.
+Internal event at time: 2023-03-04T14:02:16.385786 with logical clock: 212.
+Received message at time: 2023-03-04T14:02:16.594525 with msg queue: 0 with logical clock: 214.
+Internal event at time: 2023-03-04T14:02:16.805381 with logical clock: 215.
+Internal event at time: 2023-03-04T14:02:17.010730 with logical clock: 216.
+Internal event at time: 2023-03-04T14:02:17.221514 with logical clock: 217.
+Internal event at time: 2023-03-04T14:02:17.427403 with logical clock: 218.
+Internal event at time: 2023-03-04T14:02:17.635329 with logical clock: 219.
+Received message at time: 2023-03-04T14:02:17.844068 with msg queue: 0 with logical clock: 220.
+Received message at time: 2023-03-04T14:02:18.054395 with msg queue: 0 with logical clock: 221.
+Received message at time: 2023-03-04T14:02:18.262891 with msg queue: 1 with logical clock: 222.
+Received message at time: 2023-03-04T14:02:18.469858 with msg queue: 0 with logical clock: 223.
+Internal event at time: 2023-03-04T14:02:18.678990 with logical clock: 224.
+Sent message to socket at time: 2023-03-04T14:02:18.886551 with logical clock: 225.
+Sent message to socket at time: 2023-03-04T14:02:19.094244 with logical clock: 226.
+Internal event at time: 2023-03-04T14:02:19.305033 with logical clock: 227.
+Internal event at time: 2023-03-04T14:02:19.512608 with logical clock: 228.
+Received message at time: 2023-03-04T14:02:19.719556 with msg queue: 0 with logical clock: 229.
+Internal event at time: 2023-03-04T14:02:19.927509 with logical clock: 230.
+Received message at time: 2023-03-04T14:02:20.138385 with msg queue: 0 with logical clock: 232.
+Internal event at time: 2023-03-04T14:02:20.344054 with logical clock: 233.
+Received message at time: 2023-03-04T14:02:20.554352 with msg queue: 0 with logical clock: 234.
+Received message at time: 2023-03-04T14:02:20.760676 with msg queue: 0 with logical clock: 235.
+Internal event at time: 2023-03-04T14:02:20.968968 with logical clock: 236.
+Sent message to socket at time: 2023-03-04T14:02:21.177560 with logical clock: 237.
+Received message at time: 2023-03-04T14:02:21.385716 with msg queue: 1 with logical clock: 238.
+Received message at time: 2023-03-04T14:02:21.592227 with msg queue: 1 with logical clock: 239.
+Received message at time: 2023-03-04T14:02:21.794029 with msg queue: 0 with logical clock: 240.
+Internal event at time: 2023-03-04T14:02:22.002706 with logical clock: 241.
+Internal event at time: 2023-03-04T14:02:22.210766 with logical clock: 242.
+Sent message to socket at time: 2023-03-04T14:02:22.420140 with logical clock: 243.
+Internal event at time: 2023-03-04T14:02:22.627954 with logical clock: 244.
+Received message at time: 2023-03-04T14:02:22.835774 with msg queue: 0 with logical clock: 245.
+Internal event at time: 2023-03-04T14:02:23.044022 with logical clock: 246.
+Internal event at time: 2023-03-04T14:02:23.252479 with logical clock: 247.
+Sent message to socket at time: 2023-03-04T14:02:23.463628 with logical clock: 248.
+Internal event at time: 2023-03-04T14:02:23.669107 with logical clock: 249.
+Received message at time: 2023-03-04T14:02:23.877456 with msg queue: 0 with logical clock: 251.
+Internal event at time: 2023-03-04T14:02:24.085748 with logical clock: 252.
+Received message at time: 2023-03-04T14:02:24.294025 with msg queue: 0 with logical clock: 253.
+Internal event at time: 2023-03-04T14:02:24.501702 with logical clock: 254.
+Received message at time: 2023-03-04T14:02:24.710758 with msg queue: 0 with logical clock: 255.
+Internal event at time: 2023-03-04T14:02:24.919010 with logical clock: 256.
+Received message at time: 2023-03-04T14:02:25.129795 with msg queue: 0 with logical clock: 258.
+Sent message to other socket at time: 2023-03-04T14:02:25.336961 with logical clock: 259.
+Internal event at time: 2023-03-04T14:02:25.544709 with logical clock: 260.
+Received message at time: 2023-03-04T14:02:25.752513 with msg queue: 0 with logical clock: 261.
+Internal event at time: 2023-03-04T14:02:25.960652 with logical clock: 262.
+Received message at time: 2023-03-04T14:02:26.169002 with msg queue: 1 with logical clock: 263.
+Received message at time: 2023-03-04T14:02:26.377319 with msg queue: 0 with logical clock: 264.
+Received message at time: 2023-03-04T14:02:26.587998 with msg queue: 0 with logical clock: 265.
+Internal event at time: 2023-03-04T14:02:26.794458 with logical clock: 266.
+Received message at time: 2023-03-04T14:02:27.002415 with msg queue: 0 with logical clock: 267.
+Internal event at time: 2023-03-04T14:02:27.210620 with logical clock: 268.
+Internal event at time: 2023-03-04T14:02:27.419009 with logical clock: 269.
+Internal event at time: 2023-03-04T14:02:27.629812 with logical clock: 270.
+Sent message to other socket at time: 2023-03-04T14:02:27.836015 with logical clock: 271.
+Internal event at time: 2023-03-04T14:02:28.046716 with logical clock: 272.
+Internal event at time: 2023-03-04T14:02:28.252455 with logical clock: 273.
+Received message at time: 2023-03-04T14:02:28.460770 with msg queue: 0 with logical clock: 275.
+Internal event at time: 2023-03-04T14:02:28.669042 with logical clock: 276.
+Received message at time: 2023-03-04T14:02:28.877348 with msg queue: 0 with logical clock: 277.
+Received message at time: 2023-03-04T14:02:29.085662 with msg queue: 0 with logical clock: 278.
+Internal event at time: 2023-03-04T14:02:29.294079 with logical clock: 279.
+Received message at time: 2023-03-04T14:02:29.502266 with msg queue: 1 with logical clock: 281.
+Received message at time: 2023-03-04T14:02:29.712241 with msg queue: 0 with logical clock: 282.
+Received message at time: 2023-03-04T14:02:29.919233 with msg queue: 0 with logical clock: 283.
+Received message at time: 2023-03-04T14:02:30.126270 with msg queue: 0 with logical clock: 284.
+Internal event at time: 2023-03-04T14:02:30.333269 with logical clock: 285.
+Sent message to other socket at time: 2023-03-04T14:02:30.536235 with logical clock: 286.
+Internal event at time: 2023-03-04T14:02:30.747197 with logical clock: 287.
+Internal event at time: 2023-03-04T14:02:30.955906 with logical clock: 288.
+Internal event at time: 2023-03-04T14:02:31.160858 with logical clock: 289.
+Received message at time: 2023-03-04T14:02:31.368953 with msg queue: 0 with logical clock: 290.
+Sent message to both sockets at time: 2023-03-04T14:02:31.577647 with logical clock: 291.
+Internal event at time: 2023-03-04T14:02:31.785648 with logical clock: 292.
+Internal event at time: 2023-03-04T14:02:31.995055 with logical clock: 293.
+Received message at time: 2023-03-04T14:02:32.203283 with msg queue: 0 with logical clock: 295.
