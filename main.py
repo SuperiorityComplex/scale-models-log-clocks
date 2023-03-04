@@ -209,6 +209,9 @@ def thread_process(thread_id):
     accept_thread.start()
     running_threads.append(accept_thread)
 
+    # add delay to initialize server logic on all processes
+    time.sleep(5)
+
     # Ensure that all sockets are connected for writing
     connected_sockets = []
     for port_inc in range(1, 3):
