@@ -1,12 +1,30 @@
 ########################
 Code design:
 
-TODO - Ivan
+Our code is contained in `main.py` and our unit tests are stored in `unit_tests.py`. We also use the `experiments.sh` script for running our experiments.
+Inside our `main.py` file, we have:
+    - running_threads: a list of threads that are currently running
+    - running_sockets: a list of sockets that are currently running
+    - run_event: an event that is used to signal when to stop running
+These three variables are used to keep track of the threads and sockets that are currently running, and to signal when to stop running. This in turn
+helps with the graceful shutdown of the program.
 
-- Ran into problem with the server side of the processes not being completed before the
-other processes started to attempt to connect, patched using 5 second sleep between when
-each the process start their server-side bind and listen and when the process attempts to
-connect to the other processes.
+In `get_sys_args`, we define what flags we want to use for our program. You can read more about each specific flag in the documentation for the function.
+`get_sys_args` parses the flag values and returns it to the program for use.
+
+In our `main` function, we first create a `shutdown_thread` that shutsdown the sockets, servers, and threads, after a specified `duration`. We call `gracefully_shutdown`
+to gracefully shutdown these threads after the duration. Then after starting the `shutdown_thread` we start three threads in `start_threads`. Each thread has its own idenitier
+ and is responsible for running a machine. Each thread calls `thread_process` to start running the thread. In `thread_process`, we
+ 0) Initialize an empty network queue for the specific machine
+ 1) Get a list of system arguments that are relevant to the machine
+ 2) Initialize a log file for the process with `init_log_file`
+ 3) Create a socket for the machine running on localhost with port = 3000 + identifier
+ 4) Start a thread that listens to connections with the function `listen_for_connections`. This function accepts incoming connections. Then for each connection, it starts a thread
+ to read messages from the socket through the function `read_message_from_socket`. This function reads incoming messages and appends them to the network queue of the machine.
+ 5) We ensure that all servers are running before connecting to them for writes. 
+ 6) After setting up all the read and write sockets (total of 6 sockets), we get a random clock value (unless specified), initialize the logical clock to zero, and then make the
+ machine start running the actions specified in the spec through `do_thread_actions`.
+ 7) Inside `do_thread_actions` we execute actions according to the assignment specifications.
 
 ########################
 

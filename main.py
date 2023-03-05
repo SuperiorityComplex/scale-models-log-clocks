@@ -20,9 +20,12 @@ def get_sys_args():
     Gets the arguments from the flags
     @Parameter: None.
     @Returns: 
+    - base_log: base name for log files
     - log_clock_val: Maximum value for the clock tick range
     - act_value: Maximum value for the action range.
     - duration: how many seconds to run simulation
+    - clocks: tuple of clock values for each process
+    - acts: tuple of act values for each process
     """
     p = optparse.OptionParser()
     # normal execution flags
@@ -143,6 +146,7 @@ def do_thread_actions(thread_id, network_queue, base_log_name, clock_val, act_va
     @Parameter: 
     - thread_id: The id of the thread (0, 1, 2).
     - network_queue: The network queue to read from.
+    - base_log_name: The base log name to write to.
     - clock_val: The clock ticks per second.
     - act_value: The maximum value for the action range.
     - logical_clock_value: The logical clock value as an array for mutability (i.e. [logical_clock_value]).
