@@ -209,8 +209,9 @@ def thread_process(thread_id):
     accept_thread.start()
     running_threads.append(accept_thread)
 
-    # add delay to initialize server logic on all processes
-    time.sleep(5)
+    # ensures that all servers are initialized before connecting on all processes
+    while(len(running_sockets) < 3):
+        continue
 
     # Ensure that all sockets are connected for writing
     connected_sockets = []
@@ -220,7 +221,6 @@ def thread_process(thread_id):
         c_socket.settimeout(None)
         c_socket.connect(("127.0.0.1", 3000 + (thread_id + port_inc) % 3))
         connected_sockets.append(c_socket)
-        running_sockets.append(sock)
 
     clock_val = randrange(1, log_clock_val)
     logical_clock_value = [0]
