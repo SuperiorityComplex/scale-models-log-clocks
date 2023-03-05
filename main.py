@@ -285,6 +285,6 @@ def main():
     shutdown_thread.start()
     start_threads()
 
-
-main()
+if __name__ == '__main__':
+    main()
 
