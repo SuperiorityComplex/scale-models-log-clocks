@@ -30,7 +30,14 @@ to gracefully shutdown these threads after the duration. Then after starting the
 
 Unit testing:
 
-TODO - Jason
+Most of the functions in our code require opening sockets between multiple processes. We don't do any unit testing with these functions.
+
+We do unit tests with the log writing functions that each of the processes use.
+We test init_log_file() and write_to_log()
+
+For init_log_file(), we test normal behavior of opening a log file, whether the function correctly overwrites a file rather than appending, and passing in different parameter types.
+
+For write_to_log(), we test normal behavior of adding one line to an empty file, appending lines to a written file, initializing the file if it doesn't exist, and passing in different parameter types.
 
 ########################
 
