@@ -62,19 +62,37 @@ $ ./experiments.sh
 Findings:
 
 # Experiment 0: Run with default settings
-asdf
+- The process with the fastest clock rate will send the most messages and generally dictate the logical clock values of the other, slower processes. The final clock values for all processes is generally at or slightly less than the fastest clock process.
+- Processes with slower clock rates will spend more actions reading messages rather than rolling their action dices.
+- Processes with slower clock rates will send out far fewer messages since they have to read more messages.
+- Processes with slower clock rates will update their logical clock value far more often, to match the clock values they read from the messages.
 
 # Experiment 1: All clock rates are exactly the same
-asdf
+- All processses are almost lock-stepped with their clock values. Sometimes one will get 1 or 2 ahead of another, likely due to process scheduling, but no greater than 2 apart.
+- When a process receives a message, it will update at most 1 clock tick greater than what it had.
+- Message queues generally will not grow larger than 1, so no process gets hung up consuming messages rather than taking actions.
+- All processes generally send and consume the same number of messages.
 
 # Experiment 2: 0, 1 are slow clock rate, 2 is very very fast
-asdf
+- Process 2, the fastest, doesn't receive many messages.
+- Process 2 sends many messagse.
+- Process 2's clock value dictates the clock values of the other, slower processes.
+- Process 0, the slowest, can build up a giant message queue. Since it is consuming messages slower than it is receiving them, its clock value falls further behind as time passes. Needless to say, it doesn't send out any messages or take any actions besides reading messages. We notice this infinite message queue growth when Process 0 runs 1 tick per second and Process 2 runs 6 ticks per second. This, in theory, makes sense, since the expected number of messages per second that Process 2 sends to Process 0 is 6*2/10 = 1.2 while Process 0 can read at most 1 message per second.
+- Process 1, the second slowest, suffers from the same problems as Process 0, but we never saw it build the infinite message queue.
 
 # Experiment 3: 0 is slow, 1 and 2 are fast
-asdf
+- Similar to the previous experiment, we find that Process 0 builds the infinite message queue. Process 0 begins to catch up to the reading when the clock rates for the three processes are (4, 9, 11). Once the clock rates hit (5, 10, 12), Process 0 catches up and is generally able to do internal event actions and even send its own messages.
+- There is certainly some math about the expected number of messages from each process and how many process 0 can read, but this is an engineering class so I don't do this math here and leave it as an exercise for the reader.
+- Process 1, which is slower than Process 2 but still far faster than Process 0, generally does more recieves than Process 2. It falls behind slightly in clock value, but not far.
+
 
 # Experiment 4: Default clock rates, but super likely to send messages (act_range down to 4)
-asdf
+- Here, no internal events are possible. If there is an event then it will be a send.
+- In all cases, the slowest process builds the infinite message queue.
+- If there are two processes which are slowest, both will build infinite message queues. In this case, the single faster process will never receive any messages and just populate the other two process' queues with sends.
 
 Overall:
-asdf
+- The faster the process, relative to the other processes, the less time it will spend on receiving messages and the more internal events and message sends it will do.
+- The fastest process will dictate the clock value of the other two processes. It will not jump when it receives messages, but the slower processes will jump their clock values as they receive the fastest process' messages.
+- For the default action range of 10, if the slowest process is 1/6th of the clock rate as the sum of the two faster processes, then it will build an infinite queue and fall behind the other processes in clock value.
+- When the action range is squeezed, the infinite message buildup is more problematic, because the fastest process is more likely to execute sends and fill the message queues of the other processes.
